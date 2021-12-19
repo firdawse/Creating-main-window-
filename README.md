@@ -72,7 +72,7 @@ In the lecture on **QMainWindow**,we wrote the code for the graphical and set of
 
 at the end we will have an application that looks like that :
 
-![](2.png)
+![](2.PNG)
 
 # Saving Files [](#setup)
 
@@ -198,7 +198,7 @@ void mySpreadSheet::loadSlot(){
 ```
 
 2- Then Using the designer we obtain the following form
-![](1.png)
+![](1.PNG)
 
 3 - And here is the implementation of recentfiles constructor
 
@@ -253,7 +253,7 @@ to do that we 've called
 
 - The [QColor](https://doc.qt.io/qt-5/qcolor.html) class that provides colors based on RGB, HSV or CMYK values...
 
-![](3.png)
+![](3.PNG)
 
 Here is the interesting connexion with the **backgroundColor** action:
 
@@ -282,7 +282,7 @@ void mySpreadSheet::backgroundColorSlot()
 # Select font
 
 to improve the performance of our application, we thought about modifying the font of items by using the power of [QFont](https://doc.qt.io/qt-5/qfont.html) class that specifies a query for a font used for drawing text.
-![](4.png)
+![](4.PNG)
 
 the same process of calor selector is repeated
 
@@ -310,7 +310,7 @@ void mySpreadSheet::selectFont()
 - ## column
   to select a desired row we have first ceated a dialog to get its location
 
-![](5.png)
+![](5.PNG)
 
 then implemented our selectCol slot
 
@@ -457,7 +457,7 @@ then creating the action ,the connection and the implementation of goCellSlot
 
 if goCell send you to the desired item through coordinates find cell will do the same task but based on a given text
 for that we've used a QDialog
-![](6.png)
+![](6.PNG)
 
 containing a public function `QString getCell()const;`
 that return the lineEdit text
@@ -504,7 +504,7 @@ For this example, we will be creating a simple text editor program built around 
 
 **here is an overview of our TextEditor**  
 
-![](8.png)
+![](8.PNG)
 
 the creation of this form was easy enouph ,and funny at the same time 
 * first we 've created an empty QMainWindow Project.
