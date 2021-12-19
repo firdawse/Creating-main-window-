@@ -179,7 +179,7 @@ our function can :
 
 > we 've used a QDebug class that it is useful to obtain a default QDebug object to use for writing debugging information. **we could have used QMessageBox** but why not learning new things
 
-# Recents Files [](#recentfiles)
+# Recents Files[](#recentfiles)
 
 Now we will add the function for the **recentfiles** action. For that, let's implement a [QListWidget](https://doc.qt.io/qt-5/qlistwidget.html#details) on our project
 
