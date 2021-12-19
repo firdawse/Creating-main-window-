@@ -284,7 +284,8 @@ void mySpreadSheet::backgroundColorSlot()
 
 # Select font[](#font)
 
-to improve the performance of our application, we thought about modifying the font of items by using the power of [QFont](https://doc.qt.io/qt-5/qfont.html) class that specifies a query for a font used for drawing text.
+to improve the performance of our application, we thought about modifying the font of items by using the power of [QFont](https://doc.qt.io/qt-5/qfont.html) class that specifies a query for a font used for drawing text.  
+
 ![](4.PNG)
 
 the same process of calor selector is repeated
