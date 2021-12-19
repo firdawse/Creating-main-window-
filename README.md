@@ -7,37 +7,37 @@ In this practical course we will be familiar with creating **main windows** usin
 - [SpreadSheet (Functionality)]()
 
   - [Context](#context)
-  - [Saving Content]()
-  - [Load File]()
+  - [Saving Content](#save)
+  - [Load File](#load)
     - csv
     - simple file
-  - [updateStatusBar]()
+  - [recentFiles](#recentfiles)
+     - QListWidget
   - [updateLineEdit]()
-  - [recentFiles]()
-    - QListWidget
-  - [backgroundColor]()
-  - [selectFont]()
-  - [select]()
+  - [backgroundColor](#color)
+  - [selectFont](#font)
+  - [select](#select)
     - row
     - col
     - all
-  - [new file]()
-  - [delete]()
-  - [Go Cell]()
-  - [findCell]()
-- [Text Editor]()
-  - [File]()
+  - [new file](#new)
+  - [updateStatusBar](#bar)
+  - [delete](#delete)
+  - [Go Cell](#gocell)
+  - [findCell](#findcell)
+- [Text Editor](#texteditor)
+  - [File](#file)
     - [New]()
     - [Open]()
     - [Save]()
     - [Save as]()
-  - [Edit]()
+  - [Edit](#file)
     - [copy]()
     - [cut]()
     - [paste]()
     - [redo]()
     - [undo]()
-  - [format]()
+  - [format](#format)
     - [italic]()
     - [bold]()
     - [strikeout]()
@@ -74,7 +74,7 @@ at the end we will have an application that looks like that :
 
 ![](2.PNG)
 
-# Saving Files [](#setup)
+# Saving Files [](#save)
 
 For this task, we will try to save the content of our spreadsheet in a simple format that stores the **coordinates** and the **content** of the non empty cells.
 
@@ -122,7 +122,7 @@ void  mySpreadSheet::saveSlot(){
   };
 ```
 
-# Loading Files [](#loadingfiles)
+# Loading Files [](#load)
 
 Now ,let's try to load files`.csv` inside our QTableWidget
 but first let's get an idea about this file type :
@@ -179,7 +179,7 @@ our function can :
 
 > we 've used a QDebug class that it is useful to obtain a default QDebug object to use for writing debugging information. **we could have used QMessageBox** but why not learning new things
 
-# Recents Files [](#custom-slots)
+# Recents Files [](#recentfiles)
 
 Now we will add the function for the **recentfiles** action. For that, let's implement a [QListWidget](https://doc.qt.io/qt-5/qlistwidget.html#details) on our project
 
@@ -228,7 +228,7 @@ recentfiles::recentfiles(QWidget  *parent,QString  *  files  )  :
 }
 ```
 
-# Line Edit []()
+# Line Edit [](#line)
 
 In the the top of our table we've added a LineEdit that show the content of the current item
 
@@ -245,7 +245,7 @@ formulaInput->setText(location->data(Qt::EditRole).toString());
 }
 ```
 
-# backgroundColor
+  # backgroundColor [](#Color)
 
 Among the functonnalities that we've added ;changing the background of an item.
 
@@ -279,7 +279,7 @@ void mySpreadSheet::backgroundColorSlot()
 
 > Our function not just changes the background Color of a single item but can also **consider a _selection of items_**
 
-# Select font
+# Select font[](#font)
 
 to improve the performance of our application, we thought about modifying the font of items by using the power of [QFont](https://doc.qt.io/qt-5/qfont.html) class that specifies a query for a font used for drawing text.
 ![](4.PNG)
@@ -305,7 +305,7 @@ void mySpreadSheet::selectFont()
 }
 ```
 
-# Select
+# Select[](#select)
 
 - ## column
   to select a desired row we have first ceated a dialog to get its location
@@ -358,7 +358,7 @@ connect(all, &QAction::triggered,
            spreadsheet, &QTableWidget::selectAll);
 ```
 
-# New File
+# New File[](#new)
 
 to create a new file , the task is easy , the currentFile as well as all the items should be empty
 
@@ -371,7 +371,7 @@ spreadsheet->clearContents();
 }
 ```
 
-# update status bar
+# update status bar [](#status)
 
 As we 've said in the introduction QMainWindow provides a main application window, with a menu bar, tool bars, dock widgets and a **status bar** which is an horizontal bar suitable for presenting status information
 
@@ -400,7 +400,7 @@ cellLocation->setText(cell.arg(row+1).arg(col+1));
 
 our status bar work perfectly
 
-# delete
+# delete [](#Delete)
 
 deleting a single item doesn't require creating an action , but sometimes to deal with a set of adjacents items we need to facilatate the task through our delete slot where we assign an empty text to all the selected items
 
@@ -415,7 +415,7 @@ void mySpreadSheet::deleteSlot(){
   }
 ```
 
-# Go Cell
+# Go Cell[](#go cell)
 
 this action send you directly to the desired item by getting the location from user using a QDialog
 
@@ -453,7 +453,7 @@ then creating the action ,the connection and the implementation of goCellSlot
 }
 ```
 
-# find cell
+# find cell [](#find cell)
 
 if goCell send you to the desired item through coordinates find cell will do the same task but based on a given text
 for that we've used a QDialog
@@ -495,7 +495,7 @@ void mySpreadSheet::findCell(){
   
 </br>
 
-Text Editor
+Text Editor [](#textEditor)
 ================  
 For this example, we will be creating a simple text editor program built around QPlainText.we will playing the Designer for a fast application creation.  
 
@@ -514,9 +514,9 @@ the creation of this form was easy enouph ,and funny at the same time
 * then the interesting part coding the functionalities of the Text Editor ,*let's do that together*
 
 
-# File 
+# File [](#File)
 
-* ## **New** :
+* ## **New** :[](#New)
 to renew our application we simply set an empty Text to the text edit 
 ``` c++
 void texteditor::on_actionNew_triggered()
@@ -525,7 +525,7 @@ filename = "";
 ui->textEdit->setText("");
 }
 ```
-* ## **Open** :
+* ## **Open** :[](#Open)
 To get open a file we call the [QFileDialog](https://doc.qt.io/qt-5/qfiledialog.html) class that provides a dialog that allow users to select files or directories  
 
  if the file doesn't open a  warning messageBox is appearing 
@@ -548,7 +548,7 @@ void texteditor::on_actionOpen_triggered()
    file.close();
 }
 ``` 
-* ## **Save as** :
+* ## **Save as** :[](#saveas)
 To `save as` a file  we first, get save the file name ,make sure the file is open perfectly 
 then convert the content of our textEdit to a plain text then provide an interface to write it using **QTextStream**
 
@@ -569,7 +569,7 @@ void texteditor::on_actionSave_as_triggered()
     file.close();
  }
 ```
-* ## **Save** :
+* ## **Save** :[](#sa)
 
 the only difference between save and save as is to check if the filename already exist 
 
@@ -589,7 +589,7 @@ void texteditor::on_actionSave_triggered()
     file.close();
 ```
 
-# Edit 
+# Edit [](#edit)
 we haven't done a big effort on the edit menu because we've worded with the [Public Slot](https://doc.qt.io/qt-5/qtextedit.html#public-slots) of [QLineEdit](https://doc.qt.io/qt-5/qtextedit.html)
 * ## **Copy** :
 ``` c++
@@ -598,35 +598,35 @@ void texteditor::on_actionCopy_triggered()
     ui->textEdit->copy();
 }
 ```
-* ## **Cut** :
+* ## **Cut** :[](#cut)
 ``` c++
 void texteditor::on_actionCut_triggered()
 {
     ui->textEdit->cut();
 }
 ```
-* ## **Paste** :
+* ## **Paste** :[](#paste)
 ``` c++
 void texteditor::on_actionPaste_triggered()
 {
     ui->textEdit->paste();
 }
 ```
-* ## **redo** :
+* ## **redo** :[](#redo)
 ``` c++
 void texteditor::on_actionredo_triggered()
 {
     ui->textEdit->redo();
 }
 ```
-* ## **undo** :
+* ## **undo** :[](#undo)
 ``` c++
 void texteditor::on_actionundo_triggered()
 {
     ui->textEdit->undo();
 }
 ```
-# Format 
+# Format [](#format)
 In This part we tried to apply some performance propreties to our text for that we needed to be familiar with some classes and public functions like :
 
 
@@ -634,7 +634,7 @@ In This part we tried to apply some performance propreties to our text for that 
 * The [QTextCursor ](https://doc.qt.io/qt-5/qtextcursor.html)class which offers an API to access and modify QTextDocuments
 * and its public function [mergeCharFormat](https://doc.qt.io/qt-5/qtextcursor.html#mergeCharFormat) taht Merges the cursor's current character format with the properties described by format modifier. If the cursor has a selection, this function applies all the properties set in modifier to all the character formats that are part of the selection.
 
-* ## **Italic** :
+* ## **Italic** :[](#italic)
 to make the textCursor italic we refer to the function **setFontItalic**
 If italic is true, sets the text format's font to be italic; otherwise the font will be non-italic
 ``` c++
@@ -646,7 +646,7 @@ void texteditor::on_actionItalic_triggered()
 }
 ```
 
-* ## **Bold** :
+* ## **Bold** :[](#bold)
 
 to make the textCursor italic we refer to the function setFontWeight ,it sets the text format's font weight to bold.
 ``` c++
@@ -657,7 +657,7 @@ void texteditor::on_actionBold_triggered()
     ui->textEdit->textCursor().mergeCharFormat(format);
 }
 ```
-* ## **underline** :
+* ## **underline** :[](#underline)
 same here we use the fonction **setFontUnderline** ; If underline is true, sets the text format's font to be underlined; otherwise it is displayed non-underlined.
 ``` c++
 void texteditor::on_actionunderline_triggered()
@@ -667,7 +667,7 @@ void texteditor::on_actionunderline_triggered()
     ui->textEdit->textCursor().mergeCharFormat(format);
 }
 ```
-* ## **strikeout** :
+* ## **strikeout** :[](#strikeout)
 and again to underline a text we use **setFontStrikeOut** ; If strikeOut is true, sets the text format's font with strike-out enabled (with a horizontal line through it); otherwise it is displayed without strikeout.
 ``` c++
 void texteditor::on_actionstrikeout_triggered()
@@ -677,7 +677,7 @@ void texteditor::on_actionstrikeout_triggered()
     ui->textEdit->textCursor().mergeCharFormat(format);
 }
 ```
-* ## **Background text color** :
+* ## **Background text color** :[](#bgcolor)
 And.. this is a good part : setting a background color to a selected text  .
 
  After offering a QCalorDialog to select a color 
