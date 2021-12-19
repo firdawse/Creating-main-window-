@@ -128,7 +128,8 @@ Now ,let's try to load files`.csv` inside our QTableWidget
 but first let's get an idea about this file type :
 
 - CSV- A comma-separated values (CSV) file contains tabular data (numbers and text) in plain-text form. An Excel spreadsheet can be saved as a CSV file.
-  ![](https://peltiertech.com/images/2017-02/csv-data-1.png)
+  ![](https://peltiertech.com/images/2017-02/csv-data-1.png)  
+  </br>
 
 Let's code
 
