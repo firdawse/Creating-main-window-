@@ -497,7 +497,7 @@ void mySpreadSheet::findCell(){
 
 Text Editor [](#textEditor)
 ================  
-For this example, we will be creating a simple text editor program built around QPlainText.we will playing the Designer for a fast application creation.  
+For this example, we will be creating a simple text editor program built around QPlainText. we will be playing with the Designer for a fast application creation.  
 
   * [Qt Designer](https://doc.qt.io/qt-5/qtdesigner-manual.html) is the Qt tool for designing and building graphical user interfaces (GUIs) with Qt Widgets. You can compose and customize your windows or dialogs in a what-you-see-is-what-you-get (WYSIWYG) manner, and test them using different styles and resolutions.  
 
@@ -508,8 +508,8 @@ For this example, we will be creating a simple text editor program built around 
 
 the creation of this form was easy enouph ,and funny at the same time 
 * first we 've created an empty QMainWindow Project.
-* Added a resource file and add a set of predefined icons
-* added all the menues in the image description
+* Added a resource file and a set of predefined icons
+* added all the menus in the image description
 * added  actions to a menu by simply clicking the text in the menu.
 * then the interesting part coding the functionalities of the Text Editor ,*let's do that together*
 
@@ -627,7 +627,7 @@ void texteditor::on_actionundo_triggered()
 }
 ```
 # Format [](#format)
-In This part we tried to apply some performance propreties to our text for that we needed to be familiar with some classes and public functions like :
+In this part we have tried to apply some performance propreties to our text for that we needed to be familiar with some classes and public functions like :
 
 
 * The [QTextCharFormat](https://doc.qt.io/qt-5/qtextcharformat.html) class that provides formatting information for characters 
@@ -702,4 +702,4 @@ void texteditor::on_actiontext_Background_triggered()
     ui->textEdit->setCurrentCharFormat(fmt);
 }
 ``` 
-**We have managed to learn a lot from this lab ,hope you find it interesting** 
+**We have managed to learn a lot from this lab ,hope you find it interesting !** 
