@@ -74,7 +74,7 @@ at the end we will have an application that looks like that :
 
 ![](2.PNG)
 
-# Saving Files [](#save)
+# Saving Files[](#save)
 
 For this task, we will try to save the content of our spreadsheet in a simple format that stores the **coordinates** and the **content** of the non empty cells.
 
@@ -122,7 +122,7 @@ void  mySpreadSheet::saveSlot(){
   };
 ```
 
-# Loading Files [](#load)
+# Loading Files[](#load)
 
 Now ,let's try to load files`.csv` inside our QTableWidget
 but first let's get an idea about this file type :
