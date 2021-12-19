@@ -199,7 +199,8 @@ void mySpreadSheet::loadSlot(){
     count++;
 ```
 
-2- Then Using the designer we obtain the following form
+2- Then Using the designer we obtain the following form  
+
 ![](1.PNG)
 
 3 - And here is the implementation of recentfiles constructor
