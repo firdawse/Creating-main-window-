@@ -702,3 +702,4 @@ void texteditor::on_actiontext_Background_triggered()
     ui->textEdit->setCurrentCharFormat(fmt);
 }
 ``` 
+**We have managed to learn a lot from this lab ,hope you find it interesting** 
